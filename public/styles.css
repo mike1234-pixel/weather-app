@@ -1,0 +1,19 @@
+.broken-clouds-night {
+  background-color: #313639;
+  color: white;
+}
+
+.broken-clouds-day {
+  background-color: skyblue;
+  color: black;
+}
+
+.day-drop-shadow {
+  /* filter: drop-shadow(0 10px 5px blue); */
+  filter: drop-shadow(0 0 0.75rem black);
+}
+
+.night-drop-shadow {
+  /*  filter: drop-shadow(0 10px 5px blue); */
+  filter: drop-shadow(0 0 0.75rem white);
+}

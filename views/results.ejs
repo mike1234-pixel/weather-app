@@ -4,17 +4,53 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Results</title>
+      <title>Today's Weather</title>
+      <link href="/styles.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
+<%
+    const date = new Date();
+     const hours = date.getHours();
+%>
+
+    <body 
+    <% if (weatherDescription === "overcast clouds" && hours >= 19 || hours <= 6) { %>
+        class="broken-clouds-night"
+   <% } else if (weatherDescription === "overcast clouds" && hours > 6 && hours < 19) {  %>
+        class="broken-clouds-day"
+    <% } %>
+    >
+
       <h1>WEATHER RESULTS</h1>
       <p>
         The temperature in <%= query %> is <%= Math.floor(temperature) %> °C.
       </p>
-      <p>The current forecast is <%= weatherDescription %></p>
+      <p>The current forecast is <%= weatherDescription %>.</p>
       <br /><br />
-      <img src="<%=imageURL%>" />
-      <button>Return Home</button>
+      <img src="<%=imageURL%>" 
+      <% if ( hours >= 19 || hours <= 6) { %>
+        class="day-drop-shadow"
+      <% } else if (hours > 6 && hours < 19) {  %>
+        class="night-drop-shadow"
+      <% } %>
+      />
+<!-- give different drop shadows depending on the time of day -- light drop shadow for night and dark drop shadow for day-->
+      <button><a href="/">Return Home</a></button>
     </body>
   </html>
 </html>
+
+<!-- 
+    1. set up classes conditionally for these categories/time of day (finish the control statement)
+    2. change the background colours and fonts depending on current weather & time of day (write the classes in css file)
+
+    Weather categories:
+    clear sky
+    few clouds
+    scattered clouds
+    broken clouds
+    shower rain
+    rain
+    thunderstorm
+    snow
+    mist
+-->

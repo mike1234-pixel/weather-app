@@ -4,7 +4,7 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Weather App</title>
+      <title>Weather App ejs</title>
     </head>
     <body>
       <h1></h1>
@@ -12,10 +12,16 @@
         <label for="cityInput">City Name:</label>
         <input id="cityInput" type="text" name="cityName" />
         <button type="submit">Check Weather</button>
+        <p>
+          For accurate results please enter your city name, followed by a comma,
+          and your two letter country code. For example, "London, GB"
+        </p>
+        <p>If a country code is not used the site will use US as default.</p>
+        <p>
+          A full list of country codes can be found here:
+          https://www.iban.com/country-codes
+        </p>
       </form>
     </body>
   </html>
 </html>
-
-<!-- post method in the form retrieves user input send the data to our root route "/"-->
-<!-- we then catch this data in app.js using app.post()-->
