@@ -28,6 +28,8 @@ app.post("/", function(req, res) {
   const query = req.body.cityName; // user input used as query in the API call
   const apiKey = process.env.OPENWEATHER_API_KEY;
   const unit = "metric";
+  // const lat = position.coords.latitude;
+  // const lon = position.coords.longitude;
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     query +

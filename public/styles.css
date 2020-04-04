@@ -187,12 +187,22 @@ a {
 
 .default {
   background-color: whitesmoke;
-  background-image: url("./Background-Images/default.jpeg");
+  background-image: url("./Background-Images/rain-day.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   text-shadow: 0 0 3px black, 0 0 5px black;
 }
+
+.city-not-found {
+  background-color: whitesmoke;
+  background-image: url("./Background-Images/city-not-found.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  text-shadow: 0 0 3px black, 0 0 5px black;
+}
+
 /* ICON DROP SHADOWS */
 
 .day-drop-shadow {

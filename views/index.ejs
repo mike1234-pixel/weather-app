@@ -4,14 +4,14 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Weather App ejs</title>
+      <title>Weather App</title>
       <link href="/styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body class="index-body default">
       <% const date = new Date(); const year = date.getFullYear(); %>
 
       <h1 class="index-h1">WEATHER APP</h1>
-      <p><i>Check the weather where you live.</i></p>
+      <p><i>Check the weather where you live or anywhere in the world.</i></p>
       <form action="/" method="post">
         <label for="cityInput">City Name:</label>
         <input id="cityInput" type="text" name="cityName" />
@@ -23,14 +23,31 @@
         </p>
         <p>If a country code is not used the site will use US as default.</p>
         <p>
-          A full list of country codes can be found here:
-          https://www.iban.com/country-codes
+          Click here for
+          <a href="https://www.iban.com/country-codes" target="_blank"
+            >a full list of IBAN country codes</a
+          >
         </p>
         <br /><br />
+
         <p class="footnote">
-          Built by Mike Tandy <%=year%> using Node.js, Express & EJS
+          Built by Mike Tandy <%=year%> using Node.js, Express & EJS, powered by
+          <a href="https://openweathermap.org/" target="_blank"
+            >OpenWeatherMap</a
+          >
         </p>
       </form>
+      <script>
+        if ("geolocation" in navigator) {
+          console.log("geolocation available");
+          navigator.geolocation.getCurrentPosition(position => {
+            console.log(position.coords.latitude);
+            console.log(position.coords.longitude);
+          });
+        } else {
+          console.log("geolocation not available");
+        }
+      </script>
     </body>
   </html>
 </html>
