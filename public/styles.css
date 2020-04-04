@@ -1,12 +1,159 @@
-.broken-clouds-night {
-  background-color: #313639;
-  color: white;
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+body {
+  font-family: "Varela Round";
+}
+
+.results-box {
+  width: 50%;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.clear-sky-day {
+  background-image: url("./Background-Images/clear-sky-day.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.clear-sky-night {
+  background-image: url("./Background-Images/clear-sky-night.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+.few-clouds-day {
+  background-image: url("./Background-Images/few-clouds-day.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.few-clouds-night {
+  background-image: url("./Background-Images/few-clouds-night.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+.scattered-clouds-day {
+  background-image: url("./Background-Images/scattered-clouds-day.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.scattered-clouds-night {
+  background-image: url("./Background-Images/scattered-clouds-night.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
 }
 
 .broken-clouds-day {
-  background-color: skyblue;
-  color: black;
+  background-image: url("./Background-Images/broken-clouds-day.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.broken-clouds-night {
+  background-image: url("./Background-Images/broken-clouds-night.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+.shower-rain-day {
+  background-image: url("./Background-Images/shower-rain-day.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.shower-rain-night {
+  background-image: url("./Background-Images/shower-rain-night.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+.rain-day {
+  background-image: url("./Background-Images/rain-day.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.rain-night {
+  background-image: url("./Background-Images/rain-night.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+.thunderstorm-day {
+  background-image: url("./Background-Images/thunderstorm-day.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.thunderstorm-night {
+  background-image: url("./Background-Images/thunderstorm-night.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+.snow-day {
+  background-image: url("./Background-Images/snow-day.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.snow-night {
+  background-image: url("./Background-Images/snow-night.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+.mist-day {
+  background-image: url("./Background-Images/mist-day.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.mist-night {
+  background-image: url("./Background-Images/mist-night.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+.default {
+  background-color: whitesmoke;
+  background-image: url("./Background-Images/default.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+/* ICON DROP SHADOWS */
 
 .day-drop-shadow {
   /* filter: drop-shadow(0 10px 5px blue); */

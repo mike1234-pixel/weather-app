@@ -10,23 +10,61 @@
 <%
     const date = new Date();
      const hours = date.getHours();
+     // time of day is obvs dependent on location
+     
 %>
 
     <body 
-    <% if (weatherDescription === "overcast clouds" && hours >= 19 || hours <= 6) { %>
-        class="broken-clouds-night"
-   <% } else if (weatherDescription === "overcast clouds" && hours > 6 && hours < 19) {  %>
+    <% if (icon === "01d") { %>
+        class="clear-sky-day"
+   <% } else if (icon === "01n") {  %>
+        class="clear-sky-night"
+    <% } else if (icon === "02d") { %>
+        class="few-clouds-day"
+    <% } else if (icon === "02n") {  %>
+        class="few-clouds-night"
+    <% } else if (icon === "03d") {  %>
+        class="scattered-clouds-day"
+    <% } else if (icon === "03n") {  %>
+        class="scattered-clouds-night"
+    <% } else if (icon === "04d") {  %>
         class="broken-clouds-day"
+    <% } else if (icon === "04n") {  %>
+        class="broken-clouds-night"
+    <% } else if (icon === "09d") {  %>
+        class="shower-rain-day"
+    <% } else if (icon === "09n") {  %>
+        class="shower-rain-night"
+    <% } else if (icon === "10d") {  %>
+        class="rain-day"
+    <% } else if (icon === "10n") {  %>
+        class="rain-night"
+    <% } else if (icon === "11d") {  %>
+        class="thunderstorm-day"
+    <% } else if (icon === "11n") {  %>
+        class="thunderstorm-night"
+    <% } else if (icon === "13d") {  %>
+        class="snow-day"
+    <% } else if (icon === "13n") {  %>
+        class="snow-night"
+    <% } else if (icon === "50d") {  %>
+        class="mist-day"
+    <% } else if (icon === "50n") {  %>
+        class="mist-night"
+    <% } else { %>
+        class="default"
     <% } %>
+        id="results-body"
     >
 
-      <h1>WEATHER RESULTS</h1>
-      <p>
+    <div class="results-box">
+      <h1 class="results-element">WEATHER RESULTS</h1>
+      <p class="results-element">
         The temperature in <%= query %> is <%= Math.floor(temperature) %> °C.
       </p>
-      <p>The current forecast is <%= weatherDescription %>.</p>
+      <p class="results-element">The current forecast is <%= weatherDescription %>.</p>
       <br /><br />
-      <img src="<%=imageURL%>" 
+      <img class="results-element" src="<%=imageURL%>" 
       <% if ( hours >= 19 || hours <= 6) { %>
         class="day-drop-shadow"
       <% } else if (hours > 6 && hours < 19) {  %>
@@ -35,6 +73,7 @@
       />
 <!-- give different drop shadows depending on the time of day -- light drop shadow for night and dark drop shadow for day-->
       <button><a href="/">Return Home</a></button>
+    </div>
     </body>
   </html>
 </html>
@@ -46,8 +85,8 @@
     Weather categories:
     clear sky
     few clouds
-    scattered clouds
-    broken clouds
+    scattered clouds ✔
+    broken clouds ✔
     shower rain
     rain
     thunderstorm

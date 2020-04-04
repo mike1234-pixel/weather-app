@@ -55,6 +55,7 @@ app.post("/", function(req, res) {
           icon: icon,
           imageURL: imageURL
         });
+        console.log(icon);
       });
     } else {
       res.render("error.ejs");
