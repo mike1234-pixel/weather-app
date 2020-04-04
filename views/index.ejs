@@ -7,11 +7,15 @@
       <title>Weather App ejs</title>
       <link href="/styles.css" rel="stylesheet" type="text/css" />
     </head>
-    <body>
-      <h1 class="index-h1">INDEX H1</h1>
+    <body class="index-body default">
+      <% const date = new Date(); const year = date.getFullYear(); %>
+
+      <h1 class="index-h1">WEATHER APP</h1>
+      <p><i>Check the weather where you live.</i></p>
       <form action="/" method="post">
         <label for="cityInput">City Name:</label>
         <input id="cityInput" type="text" name="cityName" />
+        <br /><br />
         <button type="submit">Check Weather</button>
         <p>
           For accurate results please enter your city name, followed by a comma,
@@ -21,6 +25,10 @@
         <p>
           A full list of country codes can be found here:
           https://www.iban.com/country-codes
+        </p>
+        <br /><br />
+        <p class="footnote">
+          Built by Mike Tandy <%=year%> using Node.js, Express & EJS
         </p>
       </form>
     </body>

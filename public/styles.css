@@ -1,13 +1,52 @@
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 
 body {
-  font-family: "Varela Round";
+  font-family: "Questrial";
+  text-shadow: 0 0 3px #313639, 0 0 5px #313639;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.index-body {
+  font-size: 1.5rem;
 }
 
 .results-box {
-  width: 50%;
-  text-align: center;
   opacity: 0.8;
+  font-size: 1.5rem;
+}
+
+#cityInput {
+  background-color: #313639;
+  color: #e3dac9;
+  width: 10rem;
+  height: 2rem;
+  font-family: "Questrial";
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  padding-left: 10px;
+}
+
+button {
+  background-color: #313639;
+  color: #e3dac9;
+  width: 10rem;
+  height: 2rem;
+  font-family: "Questrial";
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: #e3dac9;
+  width: 10rem;
+  height: 2rem;
+  font-family: "Questrial";
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .clear-sky-day {
@@ -90,6 +129,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  color: whitesmoke;
 }
 
 .rain-night {
@@ -151,7 +191,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color: whitesmoke;
+  text-shadow: 0 0 3px black, 0 0 5px black;
 }
 /* ICON DROP SHADOWS */
 
@@ -163,4 +203,8 @@ body {
 .night-drop-shadow {
   /*  filter: drop-shadow(0 10px 5px blue); */
   filter: drop-shadow(0 0 0.75rem white);
+}
+
+.footnote {
+  font-size: 0.8rem;
 }
