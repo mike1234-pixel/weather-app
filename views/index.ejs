@@ -6,12 +6,38 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Weather App</title>
       <link href="/styles.css" rel="stylesheet" type="text/css" />
+      <script>
+        if ("geolocation" in navigator) {
+          console.log("geolocation available");
+          navigator.geolocation.getCurrentPosition((position) => {
+            console.log(position.coords.latitude);
+            console.log(position.coords.longitude);
+
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude; // fine to here
+            const data = { lat, lon }; // fine
+
+            const options = {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            };
+
+            fetch("/index2", options);
+          });
+        } else {
+          console.log("geolocation not available");
+        }
+      </script>
     </head>
     <body class="index-body default">
       <% const date = new Date(); const year = date.getFullYear(); %>
 
       <h1 class="index-h1">WEATHER APP</h1>
       <p><i>Check the weather where you live or anywhere in the world.</i></p>
+
       <form action="/" method="post">
         <label for="cityInput">City Name:</label>
         <input id="cityInput" type="text" name="cityName" />
@@ -37,17 +63,14 @@
           >
         </p>
       </form>
-      <script>
-        if ("geolocation" in navigator) {
-          console.log("geolocation available");
-          navigator.geolocation.getCurrentPosition(position => {
-            console.log(position.coords.latitude);
-            console.log(position.coords.longitude);
-          });
-        } else {
-          console.log("geolocation not available");
-        }
-      </script>
     </body>
   </html>
 </html>
+
+<!--
+  1. get user coordinates, send them to the server.
+  2. server sends the relevant data to index.ejs
+  3. user's weather will display somewhere in the index.ejs file (so on the homepage), and they can manually search another city if they want.
+
+  just need to send longitude and latitude to server then I can do it.
+-->
