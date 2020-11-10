@@ -44,11 +44,37 @@ app.post("/index2", function (req, res) {
     "&appid=" +
     apiKey;
 
+  // https.get(url, function (response) {
+  //   console.log(response.statusCode); // successful if 200
+
+  //   if (response.statusCode === 200) {
+  //     // the method is making a successful api call
+
+  //     response.on("data", function (data) {
+  //       const weatherData = JSON.parse(data); // parses the hexadecimal data we get to JSON format
+  //       const temp = weatherData.main.temp; // specify JSON path to specific data we want, store in var
+  //       const weatherDescription = weatherData.weather[0].description;
+  //       const icon = weatherData.weather[0].icon;
+  //       const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+
+  //       console.log(temp, weatherDescription, icon, imageURL);
+
+  //       res.render("index2", {
+  //         temp: temp,
+  //         weatherData: weatherData,
+  //         weatherDescription: weatherDescription,
+  //         icon: icon,
+  //         imageURL: imageURL,
+  //       });
+
+  //     });
+  //   }
+  // });
+
   https.get(url, function (response) {
     console.log(response.statusCode); // successful if 200
 
     if (response.statusCode === 200) {
-      // the method is making a successful api call
       response.on("data", function (data) {
         const weatherData = JSON.parse(data); // parses the hexadecimal data we get to JSON format
 
@@ -56,7 +82,6 @@ app.post("/index2", function (req, res) {
         const weatherDescription = weatherData.weather[0].description;
         const icon = weatherData.weather[0].icon;
         const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-        console.log(temperature, weatherDescription, icon, imageURL);
 
         res.render("index2.ejs", {
           temperature: temperature,
@@ -67,7 +92,7 @@ app.post("/index2", function (req, res) {
         console.log(icon);
       });
     } else {
-      res.render("index.ejs");
+      res.render("error.ejs");
     }
   });
 });

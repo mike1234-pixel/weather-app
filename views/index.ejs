@@ -6,10 +6,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Weather App</title>
       <link href="/styles.css" rel="stylesheet" type="text/css" />
-      <script>
+      <!-- <script>
         if ("geolocation" in navigator) {
           console.log("geolocation available");
-          navigator.geolocation.getCurrentPosition((position) => {
+          navigator.geolocation.getCurrentPosition(async (position) => {
             console.log(position.coords.latitude);
             console.log(position.coords.longitude);
 
@@ -18,19 +18,26 @@
             const data = { lat, lon }; // fine
 
             const options = {
-              method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
+              method: "POST", // sends post request to the client
+              redirect: "follow",
               body: JSON.stringify(data),
             };
 
-            fetch("/index2", options);
+            const response = await fetch("/index2", options);
+
+            // window.location.href = response.url;
+
+            // .then((response) => {
+            //   console.log(response);
+            // }); // this sends a post request to the server, containing the geolocation data contained in options variable
           });
         } else {
           console.log("geolocation not available");
         }
-      </script>
+      </script> -->
     </head>
     <body class="index-body default">
       <% const date = new Date(); const year = date.getFullYear(); %>
@@ -63,6 +70,7 @@
           >
         </p>
       </form>
+      <a href="/index2">THE WEATHER NEAR YOU</a>
     </body>
   </html>
 </html>
