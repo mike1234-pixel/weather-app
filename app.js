@@ -141,8 +141,9 @@ app.post("/", function (req, res) {
   });
 });
 
-app.listen(3012, function () {
-  console.log("Server is running on port 3012");
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log(`App running on port ${port}`);
 });
 
 // openweather map weather conditions list: https://openweathermap.org/weather-conditions
